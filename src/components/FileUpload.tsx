@@ -39,7 +39,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
       const fileName = generateFileName(file.name)
       const path = `${Date.now()}-${fileName}`
 
-      const { data, error } = await uploadFile(file, bucket, path)
+      const { error } = await uploadFile(file, bucket, path)
 
       if (error) {
         onUploadError?.(error.message)
@@ -77,7 +77,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
         const fileName = generateFileName(file.name)
         const path = `${Date.now()}-${fileName}`
 
-        const { data, error } = await uploadFile(file, bucket, path)
+        const { error } = await uploadFile(file, bucket, path)
 
         if (error) {
           onUploadError?.(error.message)
