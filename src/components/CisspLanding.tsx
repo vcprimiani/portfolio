@@ -1,4 +1,5 @@
 import React from 'react'
+import BootcampContactForm from './BootcampContactForm'
 
 const faqs = [
   {
@@ -99,6 +100,9 @@ const CisspLanding: React.FC = () => (
       <a href="#" className="inline-block bg-yellow-300 text-indigo-900 font-bold px-10 py-4 rounded-lg shadow-lg text-lg hover:bg-yellow-200 transition">Enroll Now</a>
       <p className="mt-4 text-indigo-100">100% Money-Back Guarantee if you don’t pass!</p>
     </section>
+
+    {/* Bootcamp Contact Form */}
+    <BootcampContactForm />
 
     {/* FAQ */}
     <section className="py-16 px-4 max-w-3xl mx-auto">

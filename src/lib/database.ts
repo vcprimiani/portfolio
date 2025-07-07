@@ -73,6 +73,14 @@ export const getContactMessages = async () => {
   return { data, error }
 }
 
+export const getBootcampContacts = async () => {
+  const { data, error } = await supabase
+    .from('bootcamp_contacts')
+    .select('*')
+    .order('created_at', { ascending: false })
+  return { data, error }
+}
+
 // Initialize database tables (run this once)
 export const initializeDatabase = async () => {
   // This would typically be done through Supabase dashboard
