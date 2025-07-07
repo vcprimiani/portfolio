@@ -1,8 +1,16 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, User, LogOut } from 'lucide-react'
+import { User as SupabaseUser } from '@supabase/supabase-js'
+import { useAuth } from '../contexts/AuthContext'
 
-const Navbar = () => {
+interface NavbarProps {
+  onAuthClick: () => void
+  user: SupabaseUser | null
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onAuthClick, user }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const { signOut } = useAuth()
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -17,6 +25,16 @@ const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+    setIsOpen(false)
+  }
+
+  const handleAuthClick = () => {
+    onAuthClick()
+    setIsOpen(false)
+  }
+
+  const handleSignOut = async () => {
+    await signOut()
     setIsOpen(false)
   }
 
@@ -41,6 +59,30 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Auth Button */}
+              {user ? (
+                <div className="flex items-center space-x-2">
+                  <span className="text-sm text-gray-600">
+                    {user.email}
+                  </span>
+                  <button
+                    onClick={handleSignOut}
+                    className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center space-x-1"
+                  >
+                    <LogOut size={16} />
+                    <span>Sign Out</span>
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={handleAuthClick}
+                  className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center space-x-1"
+                >
+                  <User size={16} />
+                  <span>Sign In</span>
+                </button>
+              )}
             </div>
           </div>
 
@@ -68,6 +110,30 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Mobile Auth Button */}
+              {user ? (
+                <div className="border-t border-gray-200 pt-2 mt-2">
+                  <div className="px-3 py-2 text-sm text-gray-600">
+                    {user.email}
+                  </div>
+                  <button
+                    onClick={handleSignOut}
+                    className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center space-x-2"
+                  >
+                    <LogOut size={16} />
+                    <span>Sign Out</span>
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={handleAuthClick}
+                  className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center space-x-2"
+                >
+                  <User size={16} />
+                  <span>Sign In</span>
+                </button>
+              )}
             </div>
           </div>
         )}
