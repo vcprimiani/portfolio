@@ -81,6 +81,36 @@ export const getBootcampContacts = async () => {
   return { data, error }
 }
 
+export const getLandingPages = async () => {
+  const { data, error } = await supabase
+    .from('landing_pages')
+    .select('*')
+    .order('created_at', { ascending: true })
+  return { data, error }
+}
+
+export const getActiveLandingPage = async () => {
+  const { data, error } = await supabase
+    .from('landing_pages')
+    .select('*')
+    .eq('is_active', true)
+    .single()
+  return { data, error }
+}
+
+export const setActiveLandingPage = async (slug: string) => {
+  // Set all to false, then set the selected one to true
+  const { error: error1 } = await supabase
+    .from('landing_pages')
+    .update({ is_active: false })
+    .neq('slug', slug)
+  const { error: error2 } = await supabase
+    .from('landing_pages')
+    .update({ is_active: true })
+    .eq('slug', slug)
+  return { error: error1 || error2 }
+}
+
 // Initialize database tables (run this once)
 export const initializeDatabase = async () => {
   // This would typically be done through Supabase dashboard
