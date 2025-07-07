@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getBootcampContacts, getLandingPages, setActiveLandingPage, getUsers, markContactAsContacted } from '../lib/database'
 import { useAuth } from '../contexts/AuthContext'
-import { supabase } from '../lib/supabase'
 
 const ADMIN_EMAIL = 'vcprimiani@gmail.com' // Change to your admin email
 
