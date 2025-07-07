@@ -111,6 +111,24 @@ export const setActiveLandingPage = async (slug: string) => {
   return { error: error1 || error2 }
 }
 
+export const getUsers = async () => {
+  // Get all users from the auth.users table (requires service role key in production)
+  // For demo, fetch from user_profiles if available
+  const { data, error } = await supabase
+    .from('user_profiles')
+    .select('id, email, full_name, created_at')
+    .order('created_at', { ascending: false })
+  return { data, error }
+}
+
+export const markContactAsContacted = async (id: string) => {
+  const { error } = await supabase
+    .from('bootcamp_contacts')
+    .update({ contacted: true })
+    .eq('id', id)
+  return { error }
+}
+
 // Initialize database tables (run this once)
 export const initializeDatabase = async () => {
   // This would typically be done through Supabase dashboard

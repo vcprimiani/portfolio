@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAuth } from '../contexts/AuthContext'
+import { useNavigate } from 'react-router-dom'
+
+const ADMIN_EMAIL = 'vcprimiani@gmail.com'
 
 const Auth: React.FC = () => {
   const [isSignUp, setIsSignUp] = useState(false)
@@ -9,7 +12,14 @@ const Auth: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
   const [message, setMessage] = useState<string | null>(null)
 
-  const { signUp, signIn } = useAuth()
+  const { signUp, signIn, user } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (user && user.email === ADMIN_EMAIL) {
+      navigate('/admin', { replace: true })
+    }
+  }, [user, navigate])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
