@@ -6,27 +6,27 @@ const Contact = () => {
     {
       icon: <Mail className="text-primary-600" size={24} />,
       title: 'Email',
-      value: 'hello@example.com',
-      link: 'mailto:hello@example.com'
+      value: 'vincent.primiani@gmail.com',
+      link: 'mailto:vincent.primiani@gmail.com'
     },
     {
       icon: <Phone className="text-primary-600" size={24} />,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+1 (416) 555-1234',
+      link: 'tel:+14165551234'
     },
     {
       icon: <MapPin className="text-primary-600" size={24} />,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Toronto, Canada',
       link: '#'
     }
   ]
 
   const socialLinks = [
-    { name: 'GitHub', icon: <Github size={20} />, url: 'https://github.com' },
-    { name: 'LinkedIn', icon: <Linkedin size={20} />, url: 'https://linkedin.com' },
-    { name: 'Twitter', icon: <Twitter size={20} />, url: 'https://twitter.com' }
+    { name: 'GitHub', icon: <Github size={20} />, url: 'https://github.com/vincentprimiani' },
+    { name: 'LinkedIn', icon: <Linkedin size={20} />, url: 'https://linkedin.com/in/vincentprimiani' },
+    { name: 'Twitter', icon: <Twitter size={20} />, url: 'https://twitter.com/vincentprimiani' }
   ]
 
   return (

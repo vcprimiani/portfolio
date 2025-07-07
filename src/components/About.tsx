@@ -3,10 +3,10 @@ import { User, MapPin, Calendar, Mail } from 'lucide-react'
 
 const About = () => {
   const stats = [
-    { label: 'Years Experience', value: '3+' },
-    { label: 'Projects Completed', value: '50+' },
-    { label: 'Happy Clients', value: '30+' },
-    { label: 'Technologies', value: '15+' },
+    { label: 'Years Experience', value: '5+' },
+    { label: 'Projects Completed', value: '40+' },
+    { label: 'Happy Clients', value: '20+' },
+    { label: 'Technologies', value: '20+' },
   ]
 
   return (
@@ -20,11 +20,10 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            About Me
+            About Vincent Primiani
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I'm a passionate full-stack developer with a love for creating 
-            innovative solutions and beautiful user experiences.
+            I’m Vincent Primiani, a passionate full-stack developer with a love for building modern, scalable, and user-centric web applications. I thrive on solving complex problems and delivering high-quality digital solutions.
           </p>
         </motion.div>
 
@@ -42,23 +41,18 @@ const About = () => {
             </h3>
             
             <p className="text-gray-600 leading-relaxed">
-              I specialize in building modern web applications using cutting-edge technologies. 
-              With expertise in both frontend and backend development, I create seamless, 
-              scalable solutions that drive business growth.
+              My expertise spans both frontend and backend development, allowing me to create seamless, performant, and visually appealing web experiences. I enjoy collaborating with teams and clients to bring ideas to life.
             </p>
             
             <p className="text-gray-600 leading-relaxed">
-              My approach combines technical excellence with creative problem-solving, 
-              ensuring that every project not only meets but exceeds expectations. 
-              I'm constantly learning and adapting to new technologies to deliver 
-              the best possible solutions.
+              I’m always eager to learn new technologies and stay up-to-date with industry trends. Let’s work together to build something exceptional!
             </p>
 
             {/* Personal Info */}
             <div className="grid sm:grid-cols-2 gap-4 pt-6">
               <div className="flex items-center gap-3">
                 <MapPin className="text-primary-600" size={20} />
-                <span className="text-gray-700">San Francisco, CA</span>
+                <span className="text-gray-700">Toronto, Canada</span>
               </div>
               <div className="flex items-center gap-3">
                 <Calendar className="text-primary-600" size={20} />
@@ -66,7 +60,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-primary-600" size={20} />
-                <span className="text-gray-700">hello@example.com</span>
+                <span className="text-gray-700">vincent.primiani@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <User className="text-primary-600" size={20} />

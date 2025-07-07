@@ -19,7 +19,7 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium"
             >
-              👋 Hello, I'm a Full Stack Developer
+              👋 Hi, I'm Vincent Primiani
             </motion.div>
             
             <motion.h1
@@ -28,8 +28,8 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
             >
-              Building Modern
-              <span className="text-primary-600 block">Web Experiences</span>
+              Full Stack Developer
+              <span className="text-primary-600 block">Crafting Modern Web Experiences</span>
             </motion.h1>
             
             <motion.p
@@ -38,8 +38,7 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-xl text-gray-600 max-w-2xl"
             >
-              I create beautiful, functional, and user-friendly websites and applications 
-              that help businesses grow and users engage.
+              I’m passionate about building beautiful, performant, and user-friendly web applications that make a difference. Let’s create something amazing together.
             </motion.p>
             
             <motion.div
@@ -74,7 +73,7 @@ const Hero = () => {
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
-                  <div className="text-sm text-gray-500">portfolio.dev</div>
+                  <div className="text-sm text-gray-500">vincentprimiani.dev</div>
                 </div>
                 <div className="space-y-3">
                   <div className="h-4 bg-gray-200 rounded w-3/4"></div>
